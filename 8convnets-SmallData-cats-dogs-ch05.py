@@ -1,16 +1,16 @@
 #----------------------------------------------------------*
-# program : 8convnets-SmallData-cats-dogs-ch05.py;         * 
-# date    : Oct 18, 2018                                   *
-# version : x0.10;                    status: tested;      * 
+# program : 8convnets-SmallData-Island-Agriculture.py;         * 
+# date    : May 16, 2019                                   *
+# version : x0.10;                    status: untested;      * 
 # ref: https://github.com/fchollet/deep-learning-with-python-notebooks/blob/96d58b5727fcf76106f929f5ce24c40fc9b46d75
 #                                                          *
-# purpose : convnet small data set demo for cats dogs      * 
+# purpose : convnet small data set demo for Rice Paddy      * 
 #           detection, as part one demo.                   *  
 #----------------------------------------------------------*
 '''
 1. small sample set: from a few hundreds to a few tens of thousands 
-             of images. This example "dogs" or "cats" containing 
-             2000 cats, 2000 dogs. 2000 pictures for training, 
+             of images. This example "green" or "no green" containing 
+             2000 greens, 2000 no green. 2000 pictures for training, 
              1000 for validation, and finally 1000 for testing.
 2. Naively train a small convnet on 2000 training samples, without
              regularization, to set a baseline for classification 
@@ -29,11 +29,11 @@ import os, shutil # shutil for high level file operations
 
 # The path to the directory where the original
 # dataset was uncompressed
-# original_dataset_dir = '/Users/fchollet/Downloads/kaggle_original_data'
-original_dataset_dir = 'kaggle-cats-dogs'
+# original_dataset_dir = '/Users/fchollet/Downloads/padi.csv'
+original_dataset_dir = 'padi.csv'
 
 # The directory to store smaller dataset
-base_dir = 'kaggle-cats-dogs-small'
+base_dir = 'padi.csv'
 os.mkdir(base_dir)
 
 # Directories for training, validation and test splits
@@ -44,13 +44,13 @@ os.mkdir(validation_dir)
 test_dir = os.path.join(base_dir, 'test')
 os.mkdir(test_dir)
 
-# Directory with training cat pictures
-train_cats_dir = os.path.join(train_dir, 'cats')
-os.mkdir(train_cats_dir)
+# Directory with training happyplants pictures
+train_happyplants_dir = os.path.join(train_dir, 'happyplants')
+os.mkdir(train_happyplants_dir)
 
-# Directory with training dog pictures
-train_dogs_dir = os.path.join(train_dir, 'dogs')
-os.mkdir(train_dogs_dir)
+# Directory with training deadplants pictures
+train_deadplants_dir = os.path.join(train_dir, 'deadplants')
+os.mkdir(train_deadplants_dir)
 
 # Directory with validation cat pictures
 validation_cats_dir = os.path.join(validation_dir, 'cats')
