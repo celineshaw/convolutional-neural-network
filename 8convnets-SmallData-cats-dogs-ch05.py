@@ -44,6 +44,10 @@ os.mkdir(validation_dir)
 test_dir = os.path.join(base_dir, 'test')
 os.mkdir(test_dir)
 
+# Directory with training cat pictures
+train_cats_dir = os.path.join (train_dir, 'cats')
+os.mkdir(train_happyplants_dir) 
+ 
 # Directory with training happyplants pictures
 train_happyplants_dir = os.path.join(train_dir, 'happyplants')
 os.mkdir(train_happyplants_dir)
@@ -53,12 +57,16 @@ train_deadplants_dir = os.path.join(train_dir, 'deadplants')
 os.mkdir(train_deadplants_dir)
 
 # Directory with validation cat pictures
-validation_cats_dir = os.path.join(validation_dir, 'cats')
+validation_happyplants_dir = os.path.join(validation_dir, 'cats')
 os.mkdir(validation_cats_dir)
 
 # Directory with validation dog pictures
-validation_dogs_dir = os.path.join(validation_dir, 'dogs')
+validation_dog_dir = os.path.join(validation_dir, 'dogs')
 os.mkdir(validation_dogs_dir)
+
+# Directory with validation deadplant pictures
+validation_deadplants_dir = os.path.join(validation_dir, 'dogs')
+os.mkdir(validation_deadplants_dir)
 
 # Directory with our validation cat pictures
 test_cats_dir = os.path.join(test_dir, 'cats')
